@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Cash Flow Statement - ACCSIM</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light" style="background-color: #49075d;">
+        <div class="container-fluid">
+            <div class="navbavr-header">
+                <a class="navbar-brand" href="CashFlowStatement.html" style="color: white;">ACCSIM</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="CashFlowStatement.html" style="color: white;">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" style="color: white;"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                <li><a href="#" style="color: white;"><span class="glyphicon glyphicon-login"></span>Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 align="center">Cash Flow Statement</h1>
+        <br>
+        <div class="buttons" align="right">
+            <button class="btn btn-default glyphicon glyphicon-print"> Print</button>
+            <button class="btn btn-default glyphicon glyphicon-download"> Download</button>
+        </div>
+        <br>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Year 1</th>
+                    <th scope="col">Year 2</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">Cash flows from operations:</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td scope="row">Collections from customers</td>
+                    <td></td>
+                    <td id="cus">1,647,200</td>
+                </tr>
+                <tr>
+                    <td scope="row">Payments to suppliers</td>
+                    <td></td>
+                    <td id="sup">765,060</td>
+                </tr>
+                <tr>
+                    <td scope="row">Payments to employees</td>
+                    <td></td>
+                    <td id="emp">160,000</td>
+                </tr>
+                <tr>
+                    <td scope="row">Other operating payments</td>
+                    <td></td>
+                    <td id="oth">299,052</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Cash flows from operations:</th>
+                    <td></td>
+                    <th id="op">423,088</th>
+<!--                    <script>
+                        var total = $( "#cus" ).val();
+                        $( "#op" ).text(total);
+                    </script>-->
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Cashflows from investing:</th>
+                    <td></td>
+                    <td>/</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Cashflows from financing:</th>
+                    <td></td>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td scope="row">Withdrawal by owner</td>
+                    <td></td>
+                    <td>-200,000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Cashflows from financing:</th>
+                    <td></td>
+                    <th>-200,000</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td scope="row">Net increase in cash</td>
+                    <td></td>
+                    <td>223,088</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Cash at beginning</th>
+                    <td></td>
+                    <th>284,794</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Cash at end</th>
+                    <td></td>
+                    <th>507,882</th>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Indirect Reconciliations:</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td scope="row">OPAT</td>
+                    <td></td>
+                    <td>515,788</td>
+                </tr>
+                <tr>
+                    <td scope="row">+/-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td scope="row">Changes in AC Rec</td>
+                    <td></td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td scope="row">Changes in inventory</td>
+                    <td></td>
+                    <td>-114,000</td>
+                </tr>
+                <tr>
+                    <td scope="row">Changes in AC Payable</td>
+                    <td></td>
+                    <td>7,500</td>
+                </tr>
+                <tr>
+                    <td scope="row">Changes in wages payable</td>
+                    <td></td>
+                    <td>8,000</td>
+                </tr>
+                <tr>
+                    <td scope="row">Plus depreciation</td>
+                    <td></td>
+                    <td>5,000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Cashflows from operations</th>
+                    <td></td>
+                    <th>423,088</th>
+                </tr>
+            </tbody>
+        </table>
+        <h3 align="center">END</h3>
+    </div>
+</body>
+</html>
