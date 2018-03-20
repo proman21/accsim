@@ -1,0 +1,208 @@
+.container {
+	margin-top: 25px;
+	padding-top: 10px;
+	background-color: white;
+	height: auto;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+#testOption {
+	float: left;
+	width: 30%;
+	margin-left: 12.5%;
+	border: 1px solid black;
+}
+
+#testOption h2 {
+	margin: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#testOption h4 {
+	padding-left: 5px;
+	padding-right: 2px;
+}
+
+#realOption {
+	float: right;
+	width: 30%;
+	margin-right: 12.5%;
+	border: 1px solid black;
+}
+
+#realOption h2 {
+	margin: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#realOption h4 {
+	padding-left: 5px;
+	padding-right: 2px;
+}
+
+#testBox {
+	background-color: #49075d;
+	color: white;
+	text-align: center;
+}
+
+#realBox {
+	background-color: #49075d;
+	color: white;
+	text-align: center;
+}
+
+#pageStatus {
+	height: 52px;	
+	background-color: white;
+	text-align: center;
+	position: relative;
+	white-space: nowrap;
+}
+
+#startTitle {
+	margin: 0px;
+}
+
+#sideNavButton {
+	background-color: #49075d;
+	margin-top: none;
+	color: white;
+	padding: 15px;
+	position: absolute;
+	left: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#startTitlePage {
+	text-align: center;
+	padding-top: 10px;
+}
+
+#advertisements {
+	width: 100%;
+	text-align: center;
+}
+
+#advertisements img {
+	max-width: 100%;
+	max-height: 100%;
+	height: auto;
+	width: auto;
+}
+
+#firstAdvertisement {
+	text-align: left;
+	width: 20%;
+	float: left;
+	margin-left: 15%;
+	border: 1px solid black;
+	display: inline-block;
+    height: auto;
+    vertical-align: middle;
+	padding: 10px;
+}
+
+#firstAdvertisement h4 {
+	padding-left: 5px;
+}
+
+#secondAdvertisement {
+	text-align: left;
+	width: 20%;
+	vertical-align: middle;
+	border: 1px solid black;
+	display: inline-block;
+    height: auto;
+    vertical-align: middle;
+	padding: 10px;
+}
+
+#secondAdvertisement h4 {
+	padding-left: 5px;
+}
+
+#thirdAdvertisement {
+	text-align: left;
+	width: 20%;
+	float: right;
+	margin-right: 15%;
+	border: 1px solid black;
+	display: inline-block;
+    height: auto;
+    vertical-align: middle;
+	padding: 10px;
+}
+
+#thirdAdvertisement h4 {
+	padding-left: 5px;
+}
+
+#userUI {
+	float: right;
+}
+
+body {
+		font-family: "Lato", sans-serif;
+		background-color: #f5f5f0;
+	}
+
+	.sidenav {
+		display: inline-block;
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #111;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+		border-top: 1px solid white;
+	}
+	
+	.sidenav a:first-child {
+		border-top: none;
+	}
+	
+	.sidenav a:last-child {
+		border-bottom: 1px solid white;
+	}
+
+	.sidenav a:hover {
+		color: #f1f1f1;
+	}
+
+	.sidenav .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+
+	@media screen and (max-height: 450px) {
+	  .sidenav {padding-top: 15px;}
+	  .sidenav a {font-size: 18px;}
+	}
