@@ -10,6 +10,9 @@
           :price="p.price"></product-pricer>
       </div>
     </div>
+    <div>
+      <button>Simulate Trading Period</button>
+    </div>
   </div>
 </template>
 
