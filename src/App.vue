@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <StartScreen msg="ACCSIM"/>
+    <h1>ACCSIM</h1>
+    <router-link :to="{ path: '/simulator', params: {} }">
+      <button>Start Game</button>
+    </router-link>
   </div>
 </template>
 
 <script>
-import StartScreen from './components/StartScreen.vue'
-
 export default {
   name: 'app',
-  components: {
-    StartScreen
-  }
 }
 </script>
 
