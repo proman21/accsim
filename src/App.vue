@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <h1>ACCSIM</h1>
-    <router-link :to="{ path: '/simulator', params: {} }">
-      <button>Start Game</button>
-    </router-link>
+    <a href="/StartPage.html"><button>Login</button></a>
   </div>
 </template>
 
