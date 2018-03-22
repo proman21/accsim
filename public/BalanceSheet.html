@@ -9,7 +9,7 @@
 	<script src="incomestatement.js"></script>
 	<link rel="stylesheet" href="style.css">
 
-    <title>Income Statement - ACCSIM</title>
+    <title>Balance Sheet - ACCSIM</title>
 </head>
 	
 	
@@ -42,7 +42,7 @@
 			
 		<span id="sideNavButton" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 		
-		<h3 style="text-align: center; margin-top: 0px; padding-top: 12.5px;">Income Statement</h3>
+		<h3 style="text-align: center; margin-top: 0px; padding-top: 12.5px;">Balance Sheet</h3>
 	
 	</div>
 	
@@ -53,16 +53,8 @@
             <button class="btn btn-default glyphicon glyphicon-download"> Download</button>
         </div>
         <br>
-		
-	<div style="margin:20px;">
-		Sales for the period: <input type="text" id="sampleSales"></br>
-		COGS for the period:  <input type="text" id="sampleCOGS"></br>
-		Advertising expenses: <input type="text" id="sampleAdsEx"></br>
-		
-		<button type="button" disabled onclick='generateIncomeStatement()' >Generate Sample Income Statement</button>
-	</div>
 
-	<div class="block"><h1>Income Statement</h1></div>
+	<div class="block"><h1>Balance Sheet</h1></div>
   
 	<form>
 	<div class="container" style="padding: 0px; margin:0px; width: 100%;">
@@ -72,72 +64,88 @@
 				<th>Year 1</th>
 			</tr>
 			<tr>
-				<th>Sales</th>
-				<th id="Sales">1465000</th>
+				<th>Current Assets</th>
 			</tr>
 			<tr>
-				<td>Less Discounts and allowances</td>
-				<td id="Discounts">29300</td>
+				<td>Cash</td>
+				<td id="Cash">284794</td>
 			</tr>
 			<tr>
-				<th>Net Sales</th>
-				<th id="NetSales">1435700</th>
+				<td>Accounts Receivable</td>
+				<td>8700</td>
 			</tr>
 			<tr>
-				<td>Cost of goods sold</td>
-				<td id="COGS">574280</td>
+				<td>Inventory</td>
+				<td id="Inventory">154000</td>
 			</tr>
 			<tr>
-				<th >Gross Profit</th>
-				<th id="GrossProfit" style="border-bottom: 1px solid #ddd;">861420</th>
+				<th>Total Current Assets</th>
+				<th>447494</th>
+			</tr>
+			<tr>
+				<th>Non-Current Assets</th>
 			</tr>
 			
 			<tr>
-				<th>Less Operating Expenses</th>
+				<td>Retail Fittings and equipment</td>
+				<td>50000</td>
 			</tr>
 			<tr>
-				<td>Wages expense</td>
-				<td id="WagesEx">146500</td>
+				<td>Accumulated Depreciation - Retail fittings and equipment</td>
+				<td>-10000</td>
 			</tr>
 			<tr>
-				<td>Lease expense</td>
-				<td id="LeaseEx">50000</td>
+				<th>Total Non-Current Assets</th>
+				<th>40000</th>
 			</tr>
 			<tr>
-				<td>Advertising expense</td>
-				<td id="Advertising">5000</td>
+				<th>Total Assets</th>
+				<th>487494</th>
 			</tr>
 			<tr>
-				<td>Depreciation expense</td>
-				<td id="DepnEx">5000</td>
+				<td></td>
 			</tr>
 			<tr>
-				<td>Insurance expense</td>
-				<td id="InsuranceEx">2000</td>
+				<th>Current Liabilities</th>
 			</tr>
 			<tr>
-				<td>Utilities </td>
-				<td id="UtilEx">6500</td>
+				<td>Accounts Payable</td>
+				<td>135000</td>
 			</tr>
 			<tr>
-				<td>Interest expense</td>
-				<td id="InterestEx">0</td>
+				<td>Wages Payable</td>
+				<td>25000</td>
 			</tr>
 			<tr>
-				<th>Total Operating Expenses</th>
-				<th id="TotalOpEx">215000</th>
+				<th>Total Current Liabilities</th>
+				<th>160000</th>
 			</tr>
 			<tr>
-				<th>Net Income before tax</th>
-				<th id="NetIncomeBTax">646420</th>
+				<th>Total Liabilities</th>
+				<th>160000</th>
 			</tr>
 			<tr>
-				<td>Income tax expense</td>
-				<td id="IncomeTaxEx">193926</td>
+				<td></td>
 			</tr>
 			<tr>
-				<th>Net Income after tax</th>
-				<th id="NetIncomeATax">452494</th>
+				<th>Shareholder's Equity</th>
+			</tr>
+			<tr>
+				<td>Share Capital</td>
+				<td>300000</td>
+			</tr>
+			
+			<tr>
+				<td>Retained Profits</td>
+				<td>27494</td>
+			</tr>
+			<tr>
+				<th>Total Owners Equity</th>
+				<th>327494</th>
+			</tr>
+			<tr>
+				<th>Total Liabilities and Shareholder's Equity</th>
+				<th>487494</th>
 			</tr>
 		</table>
 	</form>
