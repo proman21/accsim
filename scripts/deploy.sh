@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
+base_dir=$(dirname $BASH_SOURCE)
+deploy_file=$base_dir/../deploy_config
+
 # Issue warning about deployment
 echo 'WARNING! Deployment is not meant to be used to test active development builds.'
 echo 'Use "npm run serve" to use a local web server with hot-reloading.'
-
-base_dir=$(dirname $BASH_SOURCE)
-deploy_file=$base_dir/../deploy_config
 
 # Find ssh config for the deployment. If not found, build a new one from
 # a template
