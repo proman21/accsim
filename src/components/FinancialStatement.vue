@@ -1,13 +1,11 @@
 <template lang="pug">
-  b-container
-    h1 Balance Sheet
-    table.table
+  table.table
+    slot
 </template>
 
 <script>
 export default {
-  name: "balance-sheet",
-
+  name: "financial-statement"
 }
 </script>
 

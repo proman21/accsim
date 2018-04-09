@@ -26,7 +26,6 @@
             is graded. The full system experience is delivered in this
             version.
           b-button(slot="footer" to="/real") Start Real Version
-
 </template>
 
 <script>

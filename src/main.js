@@ -53,6 +53,14 @@ const store = new Vuex.Store({
     startNewRound(state, payload) {
       Object.assign(state.simulator, { step: 'decisions', round: state.simulator.round + 1})
     }
+  },
+  getters: {
+    roundName: (state) => {
+      let round = state.simulator.round
+      let year = state.business.start_year + (round / 2)
+      let period = (round % 2) + 1;
+      return `${year} Q${period}`
+    }
   }
 })
 

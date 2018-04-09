@@ -1,18 +1,81 @@
 <template lang="pug">
   div
-    h1 {{name}} Results
-      small.text-muted  {{roundName}}
+    h1 {{ name }} Results
+      small.text-muted  {{ roundName() }}
     b-card(no-body)
       b-tabs(card)
         b-tab(title="Balance Sheet")
-          balance-sheet
+          table.table.table-hover
+            thead
+              tr
+                th
+                th Year 1
+            tbody
+              tr
+                th(colspan="2") Current Assets
+              tr
+                td Cash
+                td 284794
+              tr
+                td Accounts Receivable
+                td 8700
+              tr
+                td Inventory
+                td 154000
+              tr
+                th Total Current Assets
+                th 447494
+              tr
+                th(colspan="2") Non-Current Assets
+              tr
+                td Retail Fittings and equipment
+                td 50000
+              tr
+                td Accumulated Depreciation - Retail fittings and equipment
+                td (10000)
+              tr
+                th Total Non-Current Assets
+                th 40000
+              tr
+                th Total Assets
+                th 487494
+            tbody
+              tr
+                th(colspan="2") Current Liabilities
+              tr
+                td Accounts Payable
+                td 135000
+              tr
+                td Wages Payable
+                td 25000
+              tr
+                th Total Current Liabilities
+                th 160000
+              tr
+                th Total Liabilities
+                th 160000
+            tbody
+              tr
+                th(colspan="2") Shareholder's Equity
+              tr
+                td Share Capital
+                td 300000
+              tr
+                td Retained Profits
+                td 27494
+              tr
+                th Total Owners Equity
+                th 327494
+              tr
+                th Total Liabilities and Shareholder's Equity
+                th 487494
         b-tab(title="Income Statment")
         b-tab(title="Cash Flow Statement")
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import BalanceSheet from './components/BalanceSheet.vue'
+import { mapState, mapGetters } from 'vuex'
+import FinancialStatement from './components/FinancialStatement.vue'
 
 function sum(acc, v) {
   return acc + v
@@ -20,63 +83,23 @@ function sum(acc, v) {
 
 export default {
   name: 'Results',
-  props: {
-    round: {
-      type: Number,
-      required: true,
-      validator:  v => v > 1
-    }
+  components: {
+    FinancialStatement
   },
   data () {
     return {
-      financial: [
-        {
-          balances: {
-            assets: {
-              cash: 284794,
-              accounts_receivable: 8700,
-              inventory: 154000
-            },
-            liabilites: {
-              accounts_payable: 135000,
-              wages: 25000,
-            },
-            equity: {
-              share_capital: 300000,
-              retained_profits: 27494
-            }
-          },
-          income: {
-            sales: 1465000,
-            discounts: 29300,
-            cost_of_goods: 574280,
-            expenses: {
-              wages: 146500,
-              lease: 50000,
-              advertising: 5000,
-              insurance: 2000,
-              utilities: 6500
-            },
-            tax: 193926
-          },
-          cashflow: {}
-        }
-      ]
+
     }
   },
   computed: {
-    roundName () {
-      let start_year = this.$store.state.business.start_year
-      let round = this.$store.state.simulator.round
-      let year = start_year + (round / 2)
-      let period = (round % 2) + 1;
-      return `${year} Q${period}`
-    },
     ...mapState({
       name: state => state.business.name
     })
   },
   methods: {
+    ...mapGetters([
+      "roundName"
+    ]),
     incomeTotals (period) {
       let data = this.financial[period].income
       let net_sales = data.sales - data.discounts

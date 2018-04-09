@@ -10,7 +10,8 @@
             @click="simulateTrading") Simulate Trading
           b-button.mx-2(v-else
             variant="success"
-            right) Start Next Session
+            right
+            @click="startNewRound") Start Next Session
           b-button.mx-2(variant="danger" to="/" right) Exit
     b-container
       decisions(v-if="step == 'decisions'")
@@ -35,7 +36,8 @@ export default {
   },
   methods: {
     ...mapMutations([
-      "simulateTrading"
+      "simulateTrading",
+      "startNewRound"
     ])
   }
 }
