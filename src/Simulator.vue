@@ -1,37 +1,42 @@
-<template>
-  <div class="simulation">
-    <h1>Round 1</h1>
-    <div>
-      <h2>Pricing</h2>
-      <div class="products">
-        <product-pricer v-for="p in products"
-          :key="p.title"
-          :title="p.title"
-          :price="p.price"></product-pricer>
-      </div>
-    </div>
-    <div>
-      <button>Simulate Trading Period</button>
-    </div>
-  </div>
+<template lang="pug">
+  div
+    b-navbar(toggleable="md" type="dark" variant="primary")
+      b-navbar-brand ACCSIM
+      b-nav-text Trial
+      b-navbar-nav.ml-auto
+          b-button.mx-2(v-if="step == 'decisions'"
+            variant="success"
+            right
+            @click="simulateTrading") Simulate Trading
+          b-button.mx-2(v-else
+            variant="success"
+            right) Start Next Session
+          b-button.mx-2(variant="danger" to="/" right) Exit
+    b-container
+      decisions(v-if="step == 'decisions'")
+      results(v-else)
 </template>
 
 <script>
-import ProductPricer from "./components/ProductPricer";
+import { mapState, mapMutations } from 'vuex'
+import Decisions from './Decisions.vue'
+import Results from './Results.vue'
 
 export default {
   name: "Simulator",
   components: {
-    ProductPricer
+    Decisions,
+    Results
   },
-  data: () => {
-    return {
-      products: [
-        { title: "Luxury Product", price: 300.00 },
-        { title: "Standard Product", price: 75.52 },
-        { title: "Budget Product", price: 29.95 }
-      ]
-    }
+  computed: {
+    ...mapState({
+      step: state => state.simulator.step
+    })
+  },
+  methods: {
+    ...mapMutations([
+      "simulateTrading"
+    ])
   }
 }
 </script>

@@ -9,13 +9,20 @@
     "deploy": "scripts/deploy.sh"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.6",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "style-loader": "^0.20.3",
     "vue": "^2.5.13",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
     "vue-template-compiler": "^2.5.13"
   },
   "babel": {
