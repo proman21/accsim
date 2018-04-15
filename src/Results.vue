@@ -71,15 +71,23 @@
                 th 487494
         b-tab(title="Income Statment")
         b-tab(title="Cash Flow Statement")
+        b-tab(title="Profit Curve")
+            <canvas ref="graphRef" height="300" width="400"></canvas>
 </template>
 
 <script>
 import { mapState, mapGetters } from 'vuex'
 import FinancialStatement from './components/FinancialStatement.vue'
+import Chart from 'chart.js'
+
+
+
 
 function sum(acc, v) {
   return acc + v
 }
+
+
 
 export default {
   name: 'Results',
@@ -137,8 +145,142 @@ export default {
           dataThisPeriod.balances.liabilites.wages)
         return {collection_from_customers, payments_to_supplies, payments_to_employees}
       }
+    },
+    profitGraph () {
+        var g = this.$refs.graphRef;
+        
+        let profitGraph = new Chart(g, {
+            type: 'line',
+            data: {
+                labels: [1,1465],
+                datasets: [
+                {
+                    label: "Fixed Costs",
+                    fill: false,
+                    lineTension: 0.1, 
+                    backgroundColor: 'rgba(75,192,192,0.4)',
+                    borderColor: 'rgba(75,192,192,0.4)',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: 'rgba(75,192,192,1)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                    pointHoverBorderColor: 'rgba(220,220,220,1)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [68500,68500],
+                    spanGaps: false
+                },
+				{
+                    label: "Variable Costs",
+                    fill: false,
+                    lineTension: 0.1, 
+                    backgroundColor: 'rgb(238, 244, 66)',
+                    borderColor: 'rgb(238, 244, 66)',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: 'rgb(238, 244, 66)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgb(238, 244, 66)',
+                    pointHoverBorderColor: 'rgb(238, 244, 66)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [0,720780],
+                    spanGaps: false
+                },
+				{
+                    label: "Total Costs",
+                    fill: false,
+                    lineTension: 0.1, 
+                    backgroundColor: 'rgb(211, 0, 0)',
+                    borderColor: 'rgb(211, 0, 0)',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: 'rgb(211, 0, 0)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgb(211, 0, 0)',
+                    pointHoverBorderColor: 'rgb(211, 0, 0)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [68500,789280],
+                    spanGaps: false
+                },
+				{
+                    label: "Revenue",
+                    fill: false,
+                    lineTension: 0.1, 
+                    backgroundColor: 'rgb(76, 244, 65)',
+                    borderColor: 'rgb(76, 244, 65)',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: 'rgb(76, 244, 65)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: 'rgb(76, 244, 65)',
+                    pointHoverBorderColor: 'rgb(76, 244, 65)',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [0,1465000],
+                    spanGaps: false
+                }
+                ]  
+            },
+			options:{
+				title:{
+					display:true,
+					fontSize: 45,
+					text: 'Revenue and Costs for the period'
+				},
+				scales: {
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'AMOUNT ($)',
+							fontSize: 20
+						}
+					}],
+					xAxes:[{
+						ticks: {
+							beginAtZero:true,
+							steps:10,
+							stepValue:100
+							
+						},
+						scaleLabel: {
+							display: true,
+							labelString: 'QUANTITY OF UNITS TRADED (HUNDREDS)',
+							fontSize: 20
+						}
+					}]
+				}
+			}
+        })
+        return
     }
-  }
+    
+  },
+  mounted: function(){
+	this.profitGraph();
+	}
 }
 </script>
 
